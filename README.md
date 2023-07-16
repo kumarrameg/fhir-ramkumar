@@ -34,6 +34,46 @@ Project Name is a healthcare API that provides comprehensive patient care record
 
 Refer to the API documentation [https://chat.openai.com/docs/api.md] for detailed information on using the API endpoints and data structures.
 
+With this prototype, you have basic CRUD operations for patients, encounters, and observations:
+
+### User create & Authentication:
+
+- `POST /api/user/create/` - Create a new user
+- `GET /api/user/me/` - Get the current user's details
+- `PUT /api/user/me/` - Update the current user's details
+- `PATCH /api/user/me/` - Partially update the current user's details
+- `POST /api/user/token/` - Generate an authentication token for the user
+
+#### Login:
+Once the token is generated, you can authenticate using Swagger:
+1. Click the "Authorize" button
+2. Choose the last option "tokenAuth" (apiKey)
+3. Paste your token in the format `Token **************`
+
+### Patients:
+
+- `GET /patients/` - Get a list of all patients
+- `POST /patients/` - Create a new patient
+- `GET /patients/{id}/` - Get details of a specific patient
+- `PUT /patients/{id}/` - Update details of a specific patient
+- `DELETE /patients/{id}/` - Delete a specific patient
+
+### Encounters:
+
+- `GET /encounters/` - Get a list of all encounters
+- `POST /encounters/` - Create a new encounter
+- `GET /encounters/{id}/` - Get details of a specific encounter
+- `PUT /encounters/{id}/` - Update details of a specific encounter
+- `DELETE /encounters/{id}/` - Delete a specific encounter
+
+### Observations:
+
+- `GET /observations/` - Get a list of all observations
+- `POST /observations/` - Create a new observation
+- `GET /observations/{id}/` - Get details of a specific observation
+- `PUT /observations/{id}/` - Update details of a specific observation
+- `DELETE /observations/{id}/` - Delete a specific observation
+
 ## Docker
 
 The project utilizes Docker for containerization. Follow these steps to run the project using Docker:
@@ -43,6 +83,6 @@ The project utilizes Docker for containerization. Follow these steps to run the 
 3. Navigate to the project directory: `cd project`
 4. Build the Docker image: `docker build .`
 5. Run the Docker container: `docker-compose up -d`
-6. Run the migrations: `docker-compose run --rm app sh -c "python manage.py makemigrations" `
-7. Run the migrate : `docker-compose run --rm app sh -c "python manage.py migrate" `
+6. Run the migrations: `docker-compose run --rm app sh -c "python manage.py makemigrations"`
+7. Run the migrations: `docker-compose run --rm app sh -c "python manage.py migrate"`
 8. Access the project in your browser at [http://localhost:8000](http://localhost:8000)

@@ -1,10 +1,6 @@
 # fhir-server
 By kumarrameg
 
-# Project Name
-
-Short project description.
-
 ## Table of Contents
 
 - [Project Description](#project-description)
